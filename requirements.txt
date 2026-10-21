@@ -1,0 +1,10 @@
+streamlit>=1.45
+osmnx==2.1.1
+networkx>=3.5
+folium>=0.20
+streamlit-folium>=0.25
+pandas>=2.2
+numpy>=2.1
+scikit-learn>=1.7
+joblib>=1.4
+shapely>=2.1

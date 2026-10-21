@@ -1,0 +1,30 @@
+SAFEPATH AI - RANDOM FOREST INTEGRATION
+
+Keep these existing inputs in your project:
+data/processed/road_safety_dataset.csv
+data/processed/safepath_safety_graph.graphml
+
+1) Install:
+python -m pip install -r requirements.txt
+
+2) Train Random Forest (200 trees):
+python train_safety_model.py
+
+3) Attach ML predictions to the safety graph:
+python build_ml_safety_graph.py
+
+4) Test ML-backed routing:
+python route_engine.py
+
+5) Launch frontend:
+python -m streamlit run app.py
+
+Generated files:
+data/processed/safety_model.joblib
+data/processed/road_safety_ml_predictions.csv
+data/processed/safepath_ml_safety_graph.graphml
+
+Pipeline:
+road_safety_dataset.csv -> Random Forest -> predicted_safety_score -> ML safety graph -> constrained route engine -> Streamlit
+
+The prototype validation previously obtained MAE 1.81 and R² 0.95 on 48 training / 13 testing rows. The final model is refit on all 61 rows after validation.
